@@ -10,7 +10,7 @@ Steps to create your own fancy polaroid:
 Results:
 
 <h3>Original Image</h3>
-![alt text](./images.jpeg)
+<img src = "./images.jpeg">
 
 <h3> Results </h3>
-![alt text](./results.png)
+<img src = "./results.png">
