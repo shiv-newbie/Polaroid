@@ -6,6 +6,7 @@ from time import time
 from skimage import io
 from convolution import convolution
 from ImageEditting import *
+from PIL import Image
 import itertools
 import sys
 
@@ -110,11 +111,14 @@ def fancy_polaroid(img):
     
     plt.show()
     
-    return blurImgH, blurImgV
+    return blurImgH/255, blurImgV/255
 
 
 #if __init__ == __main__:
 path = sys.argv[1]
 print(path)
-fancy_polaroid(path)
-
+h, v = fancy_polaroid(path)
+im = Image.fromarray((v * 255).astype(np.uint8))
+im.save("PolaroidVertical.jpg")
+im = Image.fromarray((h * 255).astype(np.uint8))
+im.save("PolaroidHorizontal.jpg")
